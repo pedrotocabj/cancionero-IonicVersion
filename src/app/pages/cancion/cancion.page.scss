@@ -1,0 +1,32 @@
+ion-toolbar{
+    display: flex;
+}
+
+ion-title{
+    flex-wrap: wrap;
+}
+
+.ficha{
+background-color: rgba(250, 242, 225, 0.542);
+display: grid;
+grid-template-columns: 35% auto;
+margin: 0 10px;
+
+    .imagen{
+        margin-left: 5px;
+        align-items: center;
+        display: flex;
+        height: 100%;
+
+    }
+    .datos{
+        margin-left: 5px;
+        .contenedor{
+            display: flex;
+            align-items: center;
+            ion-icon{
+                margin-right: 5px ;
+            }
+        }
+    }
+}

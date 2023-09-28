@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{cancion.titulo}}</ion-title>
+    <ion-back-button></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{cancion.titulo}}</ion-title>
+      <ion-back-button></ion-back-button>
+    </ion-toolbar>
+  </ion-header>
+  <div class="ficha">
+    <div *ngIf="cancion.img !==''" class="imagen">
+      <img
+        *ngIf="cancion.img !==''"
+        [src]="cancion.img"
+        alt="{{cancion.titulo}}"
+      />
+    </div>
+    <div class="datos">
+      <div class="contenedor">
+        <ion-icon name="musical-notes"></ion-icon>
+        <p>{{cancion.titulo}}</p>
+      </div>
+      <div class="contenedor">
+        <ion-icon name="people"></ion-icon>
+        <p>{{cancion.banda}}</p>
+      </div>
+      <div class="contenedor">
+        <ion-icon name="albums"></ion-icon>
+        <p>{{cancion.album}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

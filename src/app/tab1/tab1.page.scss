@@ -1,0 +1,25 @@
+.etiquetas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  gap: 5px;
+  height: auto;
+  margin: 0 5px;
+  text-align: center;
+  height: 25%;
+  a {
+    font-weight: 600;
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    background-color: rgb(221, 133, 26);
+    border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    ion-icon{
+      font-size: x-large;
+    }
+}
+}

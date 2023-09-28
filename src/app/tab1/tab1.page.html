@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      TuCancionero
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">TuCancionero</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar color="light" animated="true" placeholder="Busca tu cancion"></ion-searchbar>
+<div class="etiquetas">
+  <a [routerLink]="['/tabs/tab2']"><ion-icon name="musical-notes"></ion-icon>Lista de canciones</a>
+  <a [routerLink]="['/tabs/tab3']"><ion-icon name="person"></ion-icon>Perfil</a>
+</div>
+</ion-content>
