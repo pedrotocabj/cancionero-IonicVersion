@@ -3,30 +3,91 @@ ion-toolbar{
 }
 
 ion-title{
-    flex-wrap: wrap;
+flex-wrap: wrap;
 }
 
-.ficha{
-background-color: rgba(250, 242, 225, 0.542);
-display: grid;
-grid-template-columns: 35% auto;
-margin: 0 10px;
+#ficha{
+    display: flex;
+    flex-direction: column;
+    background-color: #2b343b;
+    border-radius: 15px;
+    margin: 10px 15px;
+    height: fit-content;
 
     .imagen{
-        margin-left: 5px;
+        width: 100%;
+        text-align: center;
         align-items: center;
-        display: flex;
-        height: 100%;
-
-    }
-    .datos{
-        margin-left: 5px;
-        .contenedor{
-            display: flex;
-            align-items: center;
-            ion-icon{
-                margin-right: 5px ;
-            }
+        margin-top: 10px;
+        img{
+          width: 240px;
+          height: 240px;
         }
     }
+    .datoscancion{
+        display: flex;
+        justify-content: space-around;
+         .datasos{
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            justify-content: center;
+            .contenedor{
+                display: flex;
+                align-items: center;
+                gap: 7px;
+            }
+        }
+
+        p{
+            margin: 5px
+        }
+
+    }
 }
+
+.corazon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+[id="heart"] {
+    position: absolute;
+    left: -100vw;
+
+  }
+  
+  [for="heart"] {
+    color: #aab8c2;
+    cursor: pointer;
+    font-size: 3em;
+    align-self: center;  
+    transition: color 0.2s ease-in-out;
+  }
+  
+  [for="heart"]:hover {
+    color: grey;
+  }
+  
+  [for="heart"]::selection {
+    color: none;
+    background: transparent;
+  }
+  
+  [for="heart"]::moz-selection {
+    color: none;
+    background: transparent;
+  }
+  
+  [id="heart"]:checked + label {
+    color: #e2264d;
+    will-change: font-size;
+  }
+  
+  
+  
+  @keyframes heart {0%, 17.5% {font-size: 0;}}

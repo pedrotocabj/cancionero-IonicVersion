@@ -1,0 +1,13 @@
+Tab1:
+    - Agregar que aparezca la lista de canciones cuando abris el buscador
+    - Agregar fotos a los botones
+    - Cambiar la parte de arriba
+Tab2:
+    - Hacer funcionar el modal de mierda
+        - Que pushee los datos al array de canciones en el constants
+        - Agregar el boton de borrar canciones
+Tab3:
+    - Que si existe los datos de usuario cambie el boton a editar
+    - Que agregue los datos cuando los pones, y que se queden una vez ya puestos
+Canciones:
+    - Agregar los acordes o los botones que me lleve a la pagina
