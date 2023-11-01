@@ -19,7 +19,6 @@ export class Tab1Page {
   handleInput(event) {
     const query = event.target.value.toLowerCase();
     this.results = this.canciones.filter((cancion) => cancion.titulo.toLowerCase().indexOf(query) > -1);
-
   }
 
 }
