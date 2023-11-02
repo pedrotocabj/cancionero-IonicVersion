@@ -8,9 +8,11 @@ export class UsuarioService {
 
   constructor() { }
 
-  guardarDatos(usuario:Usuario){
-    localStorage.setItem('perfil', JSON.stringify(usuario))
+usuarioArray:Usuario[] = []
 
+  guardarDatos(usuario:Usuario){
+    localStorage.setItem('perfil', JSON.stringify(usuario));
+    this.usuarioArray.push(usuario);
   }
 
   leerDatos(){

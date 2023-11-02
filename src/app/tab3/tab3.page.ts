@@ -30,9 +30,10 @@ export class Tab3Page {
     console.log(this.usuario);
   }
 
-  usuarioExiste:boolean = true;
+  usuarioExiste:boolean = false;
 
   guardarDatosPerfil() {
     this.usuarioService.guardarDatos(this.usuario);
+    this.usuarioExiste = true;
   }
 }
