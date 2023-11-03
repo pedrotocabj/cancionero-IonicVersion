@@ -1,8 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { CANCIONES } from '../core/constants/canciones';
 import { Cancion } from '../core/interfaces/canciones';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { CancioneroService } from '../core/services/cancioneroservice/cancionero.service';
 
 @Component({
   selector: 'app-tab2',
@@ -14,20 +15,28 @@ export class Tab2Page {
   constructor() {}
   @ViewChild(IonModal) modal: IonModal;
 
+  cancioneroService = inject(CancioneroService);
+  canciones:Cancion[] = CANCIONES;
 
-  canciones:Cancion[] = CANCIONES
+cancion:Cancion = {
+  id: this.canciones.length + 1,
+  titulo: '',
+  banda: '',
+  album: '',
+  img: '',
+  acordes: '',
+}
   
   cancel() {
     this.modal.dismiss(null, 'cancelar');
   }
 
   confirm() {
-    this.modal.dismiss(this.canciones, 'enviar');
-    console.log(this.canciones);
-  }
+    this.modal.dismiss(this.cancion, 'enviar');
+    this.cancioneroService.agregarCancionAlCancionero(this.cancion);
+    }
 
-  usuarioExiste:boolean = true;
 
-  guardarDatosPerfil() {
-  } 
+
+
 }

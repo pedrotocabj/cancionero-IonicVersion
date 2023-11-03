@@ -67,6 +67,7 @@
               type="text"
               placeholder="Ingresa el titulo aquí"
               required
+              [(ngModel)]="cancion.titulo"
             ></ion-input>
           </ion-item>
           <ion-item>
@@ -74,6 +75,8 @@
             <ion-input
               type="text"
               placeholder="Autor de la cancion"
+              [(ngModel)]="cancion.banda"
+
             ></ion-input>
           </ion-item>
           <ion-item>
@@ -81,6 +84,8 @@
             <ion-input
               type="text"
               placeholder="Album de la cancion"
+              [(ngModel)]="cancion.album"
+
             ></ion-input>
           </ion-item>
           <ion-item>
@@ -92,6 +97,8 @@
             <ion-input
               type="text"
               placeholder="Acordes de la cancion"
+              [(ngModel)]="cancion.acordes"
+
             ></ion-input>
           </ion-item>
         </ion-content>

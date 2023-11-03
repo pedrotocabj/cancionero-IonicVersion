@@ -9,14 +9,15 @@ export class CancioneroService {
 
   constructor() { }
 
-  canciones:Cancion[] = CANCIONES
+  canciones:Cancion[] = CANCIONES;
 
-  agregarCancionAlCancionero(){
-    CANCIONES.push()
+  agregarCancionAlCancionero(cancion:Cancion){
+    this.canciones.push(cancion)
+    console.log(this.canciones)
   }
 
   quitarCancionDelCancionero(){
-    CANCIONES.slice()
+    this.canciones.slice()
   }
 
   ActualizarCancionero(){

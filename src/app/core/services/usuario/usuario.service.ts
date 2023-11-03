@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, WritableSignal, signal } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario';
 
 @Injectable({
@@ -6,17 +6,16 @@ import { Usuario } from '../../interfaces/usuario';
 })
 export class UsuarioService {
 
-  constructor() { }
+  constructor() {
+    const usuarioLS = localStorage.getItem('perfil');
+    if(usuarioLS) this.usuario.set(JSON.parse(usuarioLS))
+  }
 
-usuarioArray:Usuario[] = []
+  usuario:WritableSignal<Usuario | undefined> = signal(undefined)
 
   guardarDatos(usuario:Usuario){
     localStorage.setItem('perfil', JSON.stringify(usuario));
-    this.usuarioArray.push(usuario);
+    this.usuario.set(usuario)
   }
 
-  leerDatos(){
-    const perfil = localStorage.getItem('perfil')
-    return perfil ? JSON.parse(perfil) : undefined;
-  }
 }
