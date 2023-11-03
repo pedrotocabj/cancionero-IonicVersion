@@ -32,8 +32,10 @@
           </ion-thumbnail>
           <ion-label>{{cancion.titulo}}</ion-label>
           <ion-button [routerLink]="['/cancion/',cancion.id]" fill="outline">
-            <ion-icon slot="start" name="musical-notes-outline"></ion-icon>
             Acordes
+          </ion-button>
+          <ion-button>
+            <ion-icon  name="trash-outline" (click)="cancioneroService.quitarCancionDelCancionero()"></ion-icon>
           </ion-button>
         </ion-item>
       </ion-list>
