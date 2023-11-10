@@ -12,7 +12,7 @@ export class Tab1Page {
 
   constructor() {}
 
-  canciones:Cancion[] = CANCIONES 
+  canciones:Cancion[] = CANCIONES
   
   public results: Cancion[] = [...this.canciones];
 

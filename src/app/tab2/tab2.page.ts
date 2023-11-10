@@ -19,7 +19,7 @@ export class Tab2Page {
   canciones:Cancion[] = CANCIONES;
 
 cancion:Cancion = {
-  id: this.canciones.length + 1,
+  id: this.cancioneroService.cancionesExistentes.length + 1,
   titulo: '',
   banda: '',
   album: '',
