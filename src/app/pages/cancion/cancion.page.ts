@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CANCIONES } from 'src/app/core/constants/canciones';
 import { Cancion } from 'src/app/core/interfaces/canciones';
+import { CancioneroService } from 'src/app/core/services/cancioneroservice/cancionero.service';
 
 @Component({
   selector: 'app-cancion',
@@ -9,10 +10,13 @@ import { Cancion } from 'src/app/core/interfaces/canciones';
   styleUrls: ['./cancion.page.scss'],
 })
 export class CancionPage implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cancioneroService: CancioneroService
+  ) {
     activatedRoute.params.subscribe((params) => {
-      CANCIONES.forEach((cancion) => {
-        const cancionEncontrada = CANCIONES.find(
+      cancioneroService.cancionesExistentes.forEach((cancion) => {
+        const cancionEncontrada = cancioneroService.cancionesExistentes.find(
           (cancion) => cancion.id == params['id']
         );
         if (cancionEncontrada) {
@@ -22,16 +26,16 @@ export class CancionPage implements OnInit {
     });
   }
 
-  cancion:Cancion = {
-    id:0,
-    titulo:"",
-    banda:"",
-    album:"",
-    img:"",
-    acordes:""
-  }
+  cancion: Cancion = {
+    id: 0,
+    titulo: '',
+    banda: '',
+    album: '',
+    img: '',
+    acordes: '',
+  };
 
-  imagenPorDefecto:string = "../../../../assets/icon/NotFound.jpg"
+  imagenPorDefecto: string = '../../../../assets/icon/NotFound.jpg';
 
   ngOnInit() {}
 }

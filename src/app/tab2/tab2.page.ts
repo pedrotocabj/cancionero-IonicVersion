@@ -12,6 +12,7 @@ import { CancioneroService } from '../core/services/cancioneroservice/cancionero
 })
 export class Tab2Page {
 
+
   constructor() {}
   @ViewChild(IonModal) modal: IonModal;
 
@@ -36,6 +37,9 @@ cancion:Cancion = {
     this.cancioneroService.agregarCancionAlCancionero(this.cancion);
     }
 
+    quitarCancion(id: number) {
+      this.cancioneroService.quitarCancionDelCancionero(id);
+    }
 
 
 

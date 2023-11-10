@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class CancioneroService {
 
   constructor() { 
-    localStorage.setItem('canciones', JSON.stringify(CANCIONES))
+    localStorage.setItem('canciones', JSON.stringify(this.cancionesExistentes))
   }
   
   canciones:Cancion[] = CANCIONES;
@@ -20,15 +20,25 @@ export class CancioneroService {
 
   agregarCancionAlCancionero(cancion:Cancion){
     this.cancionesExistentes.push(cancion)
-    localStorage.setItem('canciones', JSON.stringify(this.cancionesExistentes))
+    this.ActualizarCancionero()
   }
 
-  quitarCancionDelCancionero(){
-    this.canciones.slice()
+  quitarCancionDelCancionero(id:number){
+    const index = this.cancionesExistentes.findIndex(cancion => cancion.id === id);
+
+    if (index !== -1) {
+      this.cancionesExistentes.splice(index, 1);
+      localStorage.setItem('canciones', JSON.stringify(this.cancionesExistentes));
+    }
+    this.ActualizarCancionero();
   }
 
   ActualizarCancionero(){
+    localStorage.setItem('canciones', JSON.stringify(this.cancionesExistentes));
+  }
 
+  getId(id:number): Cancion | undefined {
+    return this.cancionesExistentes.find(cancion => cancion.id === id);
   }
 
 }
