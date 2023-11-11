@@ -25,6 +25,9 @@ export class CancionPage implements OnInit {
       });
     });
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   cancion: Cancion = {
     id: 0,
@@ -37,5 +40,4 @@ export class CancionPage implements OnInit {
 
   imagenPorDefecto: string = '../../../../assets/icon/NotFound.jpg';
 
-  ngOnInit() {}
 }
