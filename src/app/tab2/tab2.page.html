@@ -10,8 +10,8 @@
       <ion-title size="large"> Canciones </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card>
-    <ion-card-header>
+  <ion-card *ngIf="cancioneroService.cancionesExistentes.length">
+    <ion-card-header >
       <ion-card-title>Tus Canciones</ion-card-title>
     </ion-card-header>
     <ion-card-content>
