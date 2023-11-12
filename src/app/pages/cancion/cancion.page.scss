@@ -88,6 +88,10 @@ flex-wrap: wrap;
     will-change: font-size;
   }
   
-  
-  
   @keyframes heart {0%, 17.5% {font-size: 0;}}
+
+  .acordes{
+    display: block;
+    margin: 0 15px;
+    text-align: justify;
+  }
