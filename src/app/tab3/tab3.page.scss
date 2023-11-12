@@ -7,3 +7,14 @@
     top: 50%;
     transform: translateY(-50%);
   }
+
+  .bienvenida{
+    background-color: #35353556;
+    padding: 10px 40px;
+    border-radius: 5px;
+
+    .username{
+      font-size:x-large;
+      margin-bottom: 0;
+    }
+  }

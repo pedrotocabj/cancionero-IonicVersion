@@ -41,6 +41,20 @@ cancion:Cancion = {
       this.cancioneroService.quitarCancionDelCancionero(id);
     }
 
+    handleImageUpload(event): void {
+      const file = event.target.files[0];
+      
+      if (file) {
+        this.cancion.img = URL.createObjectURL(file);
+      }
+    }
+    
+    
+    
+    
+    
+    
+
 
 
 }
