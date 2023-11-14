@@ -31,7 +31,6 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               }
-
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
             "scripts": []
@@ -80,8 +79,8 @@
             },
             "development": {
               "browserTarget": "app:build:development"
-            }
-          
+            },
+            "ci": {}
           },
           "defaultConfiguration": "development"
         },
@@ -124,19 +123,14 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ],
+    "schematicCollections": ["@ionic/angular-toolkit"],
     "analytics": false
   },
   "schematics": {
