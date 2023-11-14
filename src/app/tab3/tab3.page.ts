@@ -16,10 +16,8 @@ export class Tab3Page {
 
   constructor() {}
 
-
   //tsconfig.json ??//
   @ViewChild(IonModal) modal: IonModal;
-
 
   usuario: Usuario = {
     nombre: '',
@@ -35,7 +33,5 @@ export class Tab3Page {
     this.modal.dismiss(this.usuario, 'enviar');
     this.router.navigate(['/tabs/tab1']);
     this.usuarioService.guardarDatos(this.usuario);
-    }; 
   }
-
-
+}

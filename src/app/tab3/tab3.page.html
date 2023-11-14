@@ -12,7 +12,9 @@
   </ion-header>
   <div class="centrar">
     <div class="bienvenida" *ngIf="usuarioService.usuarioExistente">
-      <p class="username">¡Bienvenido {{usuarioService.usuarioExistente.nombre}}!</p>
+      <p class="username">
+        ¡Bienvenido {{usuarioService.usuarioExistente.nombre}}!
+      </p>
       <p>Banda favorita: {{usuarioService.usuarioExistente.artistaFav}}</p>
       <p>Genero favorito: {{usuarioService.usuarioExistente.generoFav}}</p>
     </div>

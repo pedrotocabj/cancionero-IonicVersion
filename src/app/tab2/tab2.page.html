@@ -10,8 +10,10 @@
       <ion-title size="large"> Canciones </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card *ngIf="cancioneroService.cancionesExistentes.length else TextoAgregar">
-    <ion-card-header >
+  <ion-card
+    *ngIf="cancioneroService.cancionesExistentes.length else TextoAgregar"
+  >
+    <ion-card-header>
       <ion-card-title>Tus Canciones</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -43,8 +45,10 @@
   </ion-card>
   <ng-template #TextoAgregar>
     <div class="centrar">
-    <p id="agrega">Parece que no tienes ninguna canción todavia, <span>agregá una.</span></p>
-  </div>
+      <p id="agrega">
+        Parece que no tienes ninguna canción todavia, <span>agregá una.</span>
+      </p>
+    </div>
   </ng-template>
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">
@@ -95,7 +99,12 @@
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Tapa del album</ion-label>
-            <ion-input type="file" accept="image/*" (change)="handleImageUpload($event)" placeholder="Tapa del album"></ion-input>
+            <ion-input
+              type="file"
+              accept="image/*"
+              (change)="handleImageUpload($event)"
+              placeholder="Tapa del album"
+            ></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Acordes</ion-label>

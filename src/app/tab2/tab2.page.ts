@@ -1,33 +1,30 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { CANCIONES } from '../core/constants/canciones';
 import { Cancion } from '../core/interfaces/canciones';
 import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { CancioneroService } from '../core/services/cancioneroservice/cancionero.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
-
-
   constructor() {}
   @ViewChild(IonModal) modal: IonModal;
 
   cancioneroService = inject(CancioneroService);
-  canciones:Cancion[] = CANCIONES;
 
-cancion:Cancion = {
-  id: this.cancioneroService.cancionesExistentes.length + 1,
-  titulo: '',
-  banda: '',
-  album: '',
-  img: '',
-  acordes: '',
-}
-  
+  cancion: Cancion = {
+    id: this.cancioneroService.cancionesExistentes.length + 1,
+    titulo: '',
+    banda: '',
+    album: '',
+    img: '',
+    acordes: '',
+  };
+
   cancel() {
     this.modal.dismiss(null, 'cancelar');
   }
@@ -35,26 +32,25 @@ cancion:Cancion = {
   confirm() {
     this.modal.dismiss(this.cancion, 'enviar');
     this.cancioneroService.agregarCancionAlCancionero(this.cancion);
+
+    this.cancion = {
+      id: 0,
+      titulo: '',
+      banda: '',
+      album: '',
+      img: '',
+      acordes: '',
+    };
+  }
+
+  quitarCancion(id: number) {
+    this.cancioneroService.quitarCancionDelCancionero(id);
+  }
+
+  handleImageUpload(event): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.cancion.img = URL.createObjectURL(file);
     }
-
-    quitarCancion(id: number) {
-      this.cancioneroService.quitarCancionDelCancionero(id);
-    }
-
-    handleImageUpload(event): void {
-      const file = event.target.files[0];
-      
-      if (file) {
-        this.cancion.img = URL.createObjectURL(file);
-      }
-    }
-    
-    
-    
-    
-    
-    
-
-
-
+  }
 }

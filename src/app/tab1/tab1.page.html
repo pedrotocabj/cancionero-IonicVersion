@@ -15,18 +15,26 @@
     color="light"
     animated="true"
     placeholder="Busca tu cancion"
-    [debounce]="10" (ionInput)="handleInput($event)"
+    [debounce]="10"
+    (ionInput)="handleInput($event)"
   ></ion-searchbar>
 
-<ion-list>
-  <ion-item *ngFor="let result of results">
-    <ion-label [routerLink]="['/cancion/',result.id]" >{{ result.titulo }}</ion-label>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-item *ngFor="let result of results">
+      <ion-label [routerLink]="['/cancion/',result.id]"
+        >{{ result.titulo }}</ion-label
+      >
+    </ion-item>
+  </ion-list>
 
-<div class="etiquetas">
-  <a class="primerHijo" [routerLink]="['/tabs/tab2']"><span><ion-icon name="musical-notes"></ion-icon>Lista de canciones</span></a>
-  <a class="segundoHijo" [routerLink]="['/tabs/tab3']"><span><ion-icon name="person"></ion-icon>Perfil</span></a>
-</div>
-  
+  <div class="etiquetas">
+    <a class="primerHijo" [routerLink]="['/tabs/tab2']"
+      ><span
+        ><ion-icon name="musical-notes"></ion-icon>Lista de canciones</span
+      ></a
+    >
+    <a class="segundoHijo" [routerLink]="['/tabs/tab3']"
+      ><span><ion-icon name="person"></ion-icon>Perfil</span></a
+    >
+  </div>
 </ion-content>

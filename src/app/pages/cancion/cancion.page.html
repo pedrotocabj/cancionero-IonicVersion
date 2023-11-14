@@ -1,52 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{cancion.titulo}}</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons>
       <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-title>{{cancion.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{cancion.titulo}}</ion-title>
       <ion-buttons slot="end">
         <ion-back-button></ion-back-button>
       </ion-buttons>
+      <ion-title size="large">{{cancion.titulo}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <div id="ficha">
     <div class="imagen">
       <img
-      *ngIf="cancion.img !=='' else imagenPorDefecto"
-      alt="{{cancion.titulo}}"
-      [src]="cancion.img"
-    />
-    <ng-template #imagenPorDefecto>
-      <img
-        src="../../assets/icon/NotFound.jpg"
-        alt="Imagen por defecto"
+        *ngIf="cancion.img !=='' else imagenPorDefecto"
+        alt="{{cancion.titulo}}"
+        [src]="cancion.img"
       />
-    </ng-template>
-    <div class="datoscancion">
-      <div class="datasos">
-        <div class="contenedor">
-        <ion-icon name="musical-notes-outline"></ion-icon><p>{{cancion.titulo}}</p>
-      </div>
-      <div class="contenedor">
-        <ion-icon name="people-outline"></ion-icon><p>{{cancion.banda}}</p>
-      </div>
-      <div class="contenedor">
-        <ion-icon name="albums-outline"></ion-icon><p>{{cancion.album}}</p>
-      </div>
-      </div>
-      <div class="corazon">
-        <input id="heart" type="checkbox"/>
-        <label for="heart">❤</label>
+      <ng-template #imagenPorDefecto>
+        <img src="../../assets/icon/NotFound.jpg" alt="Imagen por defecto" />
+      </ng-template>
+      <div class="datoscancion">
+        <div class="datasos">
+          <div class="contenedor">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+            <p>{{cancion.titulo}}</p>
+          </div>
+          <div class="contenedor">
+            <ion-icon name="people-outline"></ion-icon>
+            <p>{{cancion.banda}}</p>
+          </div>
+          <div class="contenedor">
+            <ion-icon name="albums-outline"></ion-icon>
+            <p>{{cancion.album}}</p>
+          </div>
+        </div>
+        <div class="corazon">
+          <input id="heart" type="checkbox" />
+          <label for="heart">❤</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<p class="acordes">{{cancion.acordes}}</p>
+  <p class="acordes">{{cancion.acordes}}</p></ion-content
+>

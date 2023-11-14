@@ -1,6 +1,5 @@
-export interface Usuario{
-    nombre:string;
-    artistaFav?:string;
-    generoFav?:string;
-
+export interface Usuario {
+  nombre: string;
+  artistaFav?: string;
+  generoFav?: string;
 }

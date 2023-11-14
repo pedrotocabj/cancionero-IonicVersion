@@ -1,6 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CANCIONES } from 'src/app/core/constants/canciones';
 import { Cancion } from 'src/app/core/interfaces/canciones';
 import { CancioneroService } from 'src/app/core/services/cancioneroservice/cancionero.service';
 
@@ -39,5 +38,4 @@ export class CancionPage implements OnInit {
   };
 
   imagenPorDefecto: string = '../../../../assets/icon/NotFound.jpg';
-
 }
