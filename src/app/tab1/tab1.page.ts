@@ -13,7 +13,6 @@ export class Tab1Page {
 
   constructor() {}
 
-
   public results: Cancion[] = [...this.cancioneroService.cancionesExistentes];
 
   handleInput(event) {
@@ -22,6 +21,4 @@ export class Tab1Page {
       (cancion) => cancion.titulo.toLowerCase().indexOf(query) > -1
     );
   }
-
-  
 }
