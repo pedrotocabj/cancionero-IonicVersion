@@ -2,13 +2,14 @@
   <ion-toolbar>
     <ion-title>{{cancion.titulo}}</ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-buttons slot="end">
-        <ion-back-button></ion-back-button>
+        <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
       </ion-buttons>
       <ion-title size="large">{{cancion.titulo}}</ion-title>
     </ion-toolbar>

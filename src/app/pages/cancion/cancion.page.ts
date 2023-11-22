@@ -8,7 +8,7 @@ import { CancioneroService } from 'src/app/core/services/cancioneroservice/canci
   templateUrl: './cancion.page.html',
   styleUrls: ['./cancion.page.scss'],
 })
-export class CancionPage implements OnInit {
+export class CancionPage{
   constructor(
     private activatedRoute: ActivatedRoute,
     private cancioneroService: CancioneroService
@@ -24,9 +24,7 @@ export class CancionPage implements OnInit {
       });
     });
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  
 
   cancion: Cancion = {
     id: 0,
