@@ -1,15 +1,36 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService {
-  constructor() {}
+  usuarioExistente: Usuario;
 
-  guardarDatos(usuario: Usuario) {
-    localStorage.setItem('perfil', JSON.stringify(usuario));
+  constructor() {
+    const memoriaUs = localStorage.getItem('perfil');
+    if (memoriaUs) {
+      this.usuarioExistente = JSON.parse(memoriaUs);
+    }
   }
 
-  usuarioExistente = JSON.parse(localStorage.getItem('perfil'));
+  guardarDatos(usuario: Usuario) {
+    this.usuarioExistente = { ...this.usuarioExistente, ...usuario };
+    this.actualizarLocalStorage();
+  }
+
+   actualizarLocalStorage() {
+    localStorage.setItem('perfil', JSON.stringify(this.usuarioExistente));
+  }
+
+  actualizarUsuarioExistente() {
+    const memoriaUs = localStorage.getItem('perfil');
+    if (memoriaUs) {
+      this.usuarioExistente = JSON.parse(memoriaUs);
+    }
+    console.log(this.usuarioExistente);
+  }
 }
+
+  
+

@@ -18,6 +18,7 @@ export class Tab3Page {
 
   //tsconfig.json ??//
   @ViewChild(IonModal) modal: IonModal;
+  
 
   usuario: Usuario = {
     nombre: '',
