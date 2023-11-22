@@ -15,7 +15,7 @@ export class UsuarioService {
   }
 
   guardarDatos(usuario: Usuario) {
-    this.usuarioExistente = { ...this.usuarioExistente, ...usuario };
+    this.usuarioExistente = {...usuario};
     this.actualizarLocalStorage();
   }
 
