@@ -4,6 +4,9 @@ Tab1:
 Tab2:
     - Agregar boton de Estas seguro?
 Tab3:
+    - no tener que reiniciar para que se muestre
 Canciones:
     - Agregar los acordes o los botones que me lleve a la pagina
 
+Bugs:
+Foto predeterminada cuando no hay Foto

@@ -6,9 +6,9 @@ import { Cancion } from '../../interfaces/canciones';
 })
 export class CancioneroService {
   constructor() {
-    const memoria = localStorage.getItem('canciones');
-    if (memoria) {
-      this.cancionesExistentes = JSON.parse(memoria);
+    const memoriaCa = localStorage.getItem('canciones');
+    if (memoriaCa) {
+      this.cancionesExistentes = JSON.parse(memoriaCa);
     }
   }
 

@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons>
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
     <ion-title>{{cancion.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -41,13 +38,18 @@
             <p>{{cancion.album}}</p>
           </div>
         </div>
-        <div class="corazon">
-          <input id="heart" type="checkbox" />
-          <label for="heart">❤</label>
-        </div>
       </div>
     </div>
   </div>
 
-  <p class="acordes">{{cancion.acordes}}</p></ion-content
->
+  <div *ngIf="cancion.acordes">
+    <p class="centrar">Acordes</p>
+    <pre class="acordes">{{ cancion.acordes }}</pre>
+  </div>
+  <div *ngIf="cancion.letra" class="centrar">
+    <ion-button
+      href="https://acordes.lacuerda.net/sui_generis/afuera_de_la_ciudad.shtml"
+      >Tablatura online</ion-button
+    >
+  </div>
+</ion-content>

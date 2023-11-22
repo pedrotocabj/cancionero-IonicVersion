@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Tab2Page {
   constructor() {}
+
   @ViewChild(IonModal) modal: IonModal;
 
   cancioneroService = inject(CancioneroService);
@@ -23,6 +24,7 @@ export class Tab2Page {
     album: '',
     img: '',
     acordes: '',
+    letra:'',
   };
 
   cancel() {
@@ -34,12 +36,13 @@ export class Tab2Page {
     this.cancioneroService.agregarCancionAlCancionero(this.cancion);
 
     this.cancion = {
-      id: 0,
+      id: this.cancioneroService.cancionesExistentes.length + 1,
       titulo: '',
       banda: '',
       album: '',
       img: '',
       acordes: '',
+      letra:'',
     };
   }
 

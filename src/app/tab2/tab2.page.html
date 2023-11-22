@@ -108,10 +108,18 @@
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Acordes</ion-label>
+            <ion-textarea
+              placeholder="Acordes de la canción"
+              [(ngModel)]="cancion.acordes"
+            ></ion-textarea>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Link de la tablatura</ion-label>
             <ion-input
               type="text"
-              placeholder="Acordes de la cancion"
-              [(ngModel)]="cancion.acordes"
+              placeholder="Link de la tablatura"
+              [(ngModel)]="cancion.letra"
             ></ion-input>
           </ion-item>
         </ion-content>

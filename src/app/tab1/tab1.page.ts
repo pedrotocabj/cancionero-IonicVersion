@@ -22,4 +22,6 @@ export class Tab1Page {
       (cancion) => cancion.titulo.toLowerCase().indexOf(query) > -1
     );
   }
+
+  
 }

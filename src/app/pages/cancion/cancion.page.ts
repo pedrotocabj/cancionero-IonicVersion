@@ -35,7 +35,14 @@ export class CancionPage implements OnInit {
     album: '',
     img: '',
     acordes: '',
+    letra:'',
   };
 
   imagenPorDefecto: string = '../../../../assets/icon/NotFound.jpg';
-}
+
+
+  }
+
+
+
+

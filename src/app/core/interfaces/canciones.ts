@@ -5,4 +5,5 @@ export interface Cancion {
   album?: string;
   img?: string;
   acordes?: string;
+  letra: string,
 }

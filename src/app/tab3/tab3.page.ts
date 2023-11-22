@@ -31,7 +31,7 @@ export class Tab3Page {
 
   confirm() {
     this.modal.dismiss(this.usuario, 'enviar');
-    this.router.navigate(['/tabs/tab1']);
     this.usuarioService.guardarDatos(this.usuario);
+    this.router.navigate(['/tabs/tab1']);
   }
 }
