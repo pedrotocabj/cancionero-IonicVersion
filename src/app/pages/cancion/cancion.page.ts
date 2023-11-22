@@ -32,7 +32,6 @@ export class CancionPage implements OnInit {
     id: 0,
     titulo: '',
     banda: '',
-    album: '',
     img: '',
     acordes: '',
     letra:'',

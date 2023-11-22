@@ -21,10 +21,9 @@ export class Tab2Page {
     id: this.cancioneroService.cancionesExistentes.length + 1,
     titulo: '',
     banda: '',
-    album: '',
     img: '',
     acordes: '',
-    letra:'',
+    letra: '',
   };
 
   cancel() {
@@ -39,10 +38,9 @@ export class Tab2Page {
       id: this.cancioneroService.cancionesExistentes.length + 1,
       titulo: '',
       banda: '',
-      album: '',
       img: '',
       acordes: '',
-      letra:'',
+      letra: '',
     };
   }
 
@@ -50,10 +48,4 @@ export class Tab2Page {
     this.cancioneroService.quitarCancionDelCancionero(id);
   }
 
-  handleImageUpload(event): void {
-    const file = event.target.files[0];
-    if (file) {
-      this.cancion.img = URL.createObjectURL(file);
-    }
-  }
 }

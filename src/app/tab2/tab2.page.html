@@ -56,7 +56,7 @@
       Agregar nueva cancion
     </ion-button>
 
-    <ion-modal trigger="open-modal">
+    <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
       <ng-template>
         <ion-header>
           <ion-toolbar>
@@ -73,51 +73,46 @@
         </ion-header>
         <ion-content class="ion-padding">
           <ion-item>
-            <ion-label position="stacked">Titulo de la cancion</ion-label>
             <ion-input
+              label="Titulo de la cancion"
+              labelPlacement="floating"
               type="text"
-              placeholder="Ingresa el titulo aquí"
-              required
+              placeholder="Ingresa el titulo de la cancion"
               [(ngModel)]="cancion.titulo"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked">Artista</ion-label>
             <ion-input
+              label="Artista"
+              labelPlacement="floating"
               type="text"
-              placeholder="Autor de la cancion"
+              placeholder="Ingresa el autor de la cancion"
               [(ngModel)]="cancion.banda"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked">Album</ion-label>
             <ion-input
+              label="Tapa del album (opcional)"
+              labelPlacement="floating"
               type="text"
-              placeholder="Album de la cancion"
-              [(ngModel)]="cancion.album"
-            ></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Tapa del album</ion-label>
-            <ion-input
-              type="text"
-              placeholder="Tapa del album"
+              placeholder="Ingresa la URL de la tapa del album"
               [(ngModel)]="cancion.img"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked">Acordes</ion-label>
             <ion-textarea
-              placeholder="Acordes de la canción"
+              label="Acordes de la cancion"
+              labelPlacement="floating"
+              placeholder="Ingresa los acordes de la canción"
               [(ngModel)]="cancion.acordes"
             ></ion-textarea>
           </ion-item>
-
           <ion-item>
-            <ion-label position="stacked">Link de la tablatura</ion-label>
             <ion-input
+              label="Link de la tablatura (opcional)"
+              labelPlacement="floating"
               type="text"
-              placeholder="Link de la tablatura"
+              placeholder="Ingresa el link de la tablatura"
               [(ngModel)]="cancion.letra"
             ></ion-input>
           </ion-item>

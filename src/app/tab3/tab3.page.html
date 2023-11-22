@@ -15,8 +15,8 @@
       <p class="username">
         ¡Bienvenido {{usuarioService.usuarioExistente.nombre}}!
       </p>
-      <p>Banda favorita: {{usuarioService.usuarioExistente.artistaFav}}</p>
-      <p>Genero favorito: {{usuarioService.usuarioExistente.generoFav}}</p>
+      <p *ngIf="usuarioService.usuarioExistente.artistaFav">Banda favorita: {{usuarioService.usuarioExistente.artistaFav}}</p>
+      <p *ngIf="usuarioService.usuarioExistente.generoFav">Genero favorito: {{usuarioService.usuarioExistente.generoFav}}</p>
     </div>
   </div>
   <ion-content class="ion-padding">
@@ -24,6 +24,7 @@
       *ngIf="!usuarioService.usuarioExistente else mensajeNoUsuario"
       id="open-modal2"
       expand="block"
+      
     >
       <ion-icon ng slot="start" name="person"></ion-icon>
       Crea tu cuenta
@@ -34,7 +35,7 @@
         Edita tu cuenta
       </ion-button>
     </ng-template>
-    <ion-modal trigger="open-modal2">
+    <ion-modal trigger="open-modal2" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
       <ng-template>
         <ion-header>
           <ion-toolbar>
@@ -51,27 +52,29 @@
         </ion-header>
         <ion-content class="ion-padding">
           <ion-item>
-            <ion-label position="stacked">Nombre de usuario</ion-label>
             <ion-input
+              label="Nombre de usuario"
+              labelPlacement="floating"
               type="text"
               placeholder="Ingresa tu nombre aquí"
-              required
               [(ngModel)]="usuario.nombre"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked">Genero Favorito</ion-label>
             <ion-input
+            label="Genero favorito (opcional)"
+            labelPlacement="floating"
               type="text"
-              placeholder="Genero favorito (opcional)"
+              placeholder="Ingresa tu género musical favorito"
               [(ngModel)]="usuario.generoFav"
             ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label position="stacked">Artista Favorito</ion-label>
             <ion-input
+              label="Artista favorito"
+              labelPlacement="floating"
               type="text"
-              placeholder="Artista favorito (opcional)"
+              placeholder="Ingresa tu banda o artista favorito"
               [(ngModel)]="usuario.artistaFav"
             ></ion-input>
           </ion-item>
