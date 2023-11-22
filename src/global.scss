@@ -37,3 +37,18 @@ ion-title{
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.agrega {
+    margin-top: 15px;
+    justify-content: center;
+    margin: 30px 20px;
+    background-color: #35353556;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+  
+    span {
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+}

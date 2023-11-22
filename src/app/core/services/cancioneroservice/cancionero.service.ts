@@ -13,9 +13,11 @@ export class CancioneroService {
   }
 
   cancionesExistentes: Cancion[] = [];
+  results = []
 
   agregarCancionAlCancionero(cancion: Cancion) {
     this.cancionesExistentes.push(cancion);
+    this.results.push(cancion)
     this.ActualizarCancionero();
   }
 
@@ -26,6 +28,7 @@ export class CancioneroService {
 
     if (index !== -1) {
       this.cancionesExistentes.splice(index, 1);
+      this.results.splice(index, 1);
       localStorage.setItem(
         'canciones',
         JSON.stringify(this.cancionesExistentes)

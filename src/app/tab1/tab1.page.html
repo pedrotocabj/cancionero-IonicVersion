@@ -19,11 +19,18 @@
     (ionInput)="handleInput($event)"
   ></ion-searchbar>
 
-  <ion-list>
-    <ion-item *ngFor="let result of results">
+  <ion-list *ngIf="cancioneroService.results.length > 0">
+    <ion-item *ngFor="let result of cancioneroService.results">
       <ion-label [routerLink]="['/cancion/',result.id]"
         >{{ result.titulo }}</ion-label
       >
     </ion-item>
   </ion-list>
+
+  <div *ngIf="cancioneroService.results.length < 1">
+    <p class="agrega">
+      Parece que no tienes ninguna cancion, prueba agregando una en la <span [routerLink]="['/tabs/tab2']">pestaña
+        de canciones</span>
+    </p>
+  </div>
 </ion-content>

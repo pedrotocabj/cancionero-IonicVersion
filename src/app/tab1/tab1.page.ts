@@ -13,11 +13,10 @@ export class Tab1Page {
 
   constructor() {}
 
-  public results: Cancion[] = [...this.cancioneroService.cancionesExistentes];
 
   handleInput(event) {
     const query = event.target.value.toLowerCase();
-    this.results = this.cancioneroService.cancionesExistentes.filter(
+    this.cancioneroService.results = this.cancioneroService.cancionesExistentes.filter(
       (cancion) => cancion.titulo.toLowerCase().indexOf(query) > -1
     );
   }
