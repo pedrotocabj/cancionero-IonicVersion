@@ -7,10 +7,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
     <ion-toolbar>
-      <ion-buttons slot="end">
-        <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
-      </ion-buttons>
       <ion-title size="large">{{cancion.titulo}}</ion-title>
     </ion-toolbar>
   </ion-header>
