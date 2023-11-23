@@ -9,6 +9,7 @@ export class CancioneroService {
     const memoriaCa = localStorage.getItem('canciones');
     if (memoriaCa) {
       this.cancionesExistentes = JSON.parse(memoriaCa);
+      this.results = JSON.parse(memoriaCa);
     }
   }
 
