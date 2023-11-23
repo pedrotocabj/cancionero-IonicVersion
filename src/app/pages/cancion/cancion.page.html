@@ -30,7 +30,7 @@
             <ion-icon name="musical-notes-outline"></ion-icon>
             <p>{{cancion.titulo}}</p>
           </div>
-          <div class="contenedor">
+          <div *ngIf="cancion.banda != ''" class="contenedor">
             <ion-icon name="people-outline"></ion-icon>
             <p>{{cancion.banda}}</p>
           </div>
