@@ -1,8 +1,0 @@
-Tab1:
-    - Agregar que aparezca la lista de canciones cuando abris el buscador
-    - Cambiar la parte de arriba
-Tab2:
-    - Agregar boton de Estas seguro?
-
-Bugs:
-Foto predeterminada cuando no hay Foto

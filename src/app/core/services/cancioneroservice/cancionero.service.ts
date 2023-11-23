@@ -41,5 +41,6 @@ export class CancioneroService {
 
   ActualizarCancionero() {
     localStorage.setItem('canciones', JSON.stringify(this.cancionesExistentes));
+    this.results = JSON.parse(localStorage.getItem('canciones'));
   }
 }
