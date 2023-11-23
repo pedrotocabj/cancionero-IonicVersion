@@ -32,7 +32,9 @@ export class Tab3Page {
 
   confirm() {
     this.modal.dismiss(this.usuario, 'enviar');
-    this.usuarioService.guardarDatos(this.usuario);
-    this.router.navigate(['/tabs/tab1']);
-  }
+    if(this.usuario.nombre != ''){
+      this.usuarioService.guardarDatos(this.usuario);
+      this.router.navigate(['/tabs/tab1']);
+    }
+    }
 }

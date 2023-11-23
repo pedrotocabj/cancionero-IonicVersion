@@ -16,9 +16,11 @@ export class CancioneroService {
   results = []
 
   agregarCancionAlCancionero(cancion: Cancion) {
-    this.cancionesExistentes.push(cancion);
-    this.results.push(cancion)
-    this.ActualizarCancionero();
+    if (cancion.titulo != ''){
+      this.cancionesExistentes.push(cancion);
+      this.results.push(cancion)
+      this.ActualizarCancionero();
+    }
   }
 
   quitarCancionDelCancionero(id: number) {
